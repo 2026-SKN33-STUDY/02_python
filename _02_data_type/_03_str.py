@@ -94,11 +94,66 @@ print('{} + {} = {}'.format(x, y, x+y))
 print("----- f-string -----")
 print(f"{x} + {y} = {x+y}")
 
+# -------------------------------------------
+# 문자열 인덱싱/슬라이싱
+# - 파이썬 문자열(str)은 text sequence 형태를 갖는다
+# - sequence: 순차적인, 순서가 있는 데이터 구조
+# - index: 순서(base index == 0)
+
+print('-----문자열 indexing------')
+x = 'Monday'
+print('x의 길이: ', len(x))
+print(x[0])     # [] == 배열, [0] == str 배열 중 0번째 index
+print(x[2])
+print(x[3])
+print(x[4])
+print(x[5])
+# ctrl + D 줄 복사붙여넣기
+
+# 역 인덱스: str을 거꾸로 탐색
+print('----- 역 인덱스 -----')
+print(x[-1], x[-2], x[-3], x[-4], x[-5], x[-6])
 
 
+# str 슬라이싱: 문자열 일부를 잘라서 가져오는 방법
+# 작성법: str[start:stop:step]
+print('----- str slicing -----')
+text = "hello world"
+print("text: ", text)
+print("len(text): ", len(text))
+
+print("text[0:5:1]: ", text[0:5:1])
+print("text[0:5]: ", text[0:5])
+print("text[:5]: ", text[:5])
+print("text[6:11]: ", text[6:11])
+print("text[6:]: ", text[6:])
+print("text[6:len(text)]: ", text[6:len(text)])
+print("text[:]: ", text[:])
+
+print("text[0:11:2]: ", text[0:11:2])   #0, 2, 4, 6, 8, 10
+print("text[::2]: ", text[::2])   #0, 2, 4, 6, 8, 10
+print("text[::-1]: ", text[::-1])   #10, 9, 8, ,,, 2, 1, 0
 
 
+# 문자열 불변타입(immutable)
+# id() == 변수에 저장된 값의 주소(위치)를 반환
+print("------문자열 불변타입-------")
+s = ('python')      # s에는 'python' str 메모리 주소가 저장됨
+print("s: ", s)     # s에 저장된 주소를 찾아가 'python' str을 참조함
+print("변경 전 s: ", id(s))
+
+s = s + ' hello'
+print("s: ", s)
+print("변경 후 s: ", id(s))
 
 
+# in 연산자 (멤버십 검사 연산자)
+# - 특정 값이 포함되어 있는지 검사
+# - 결과는 bool
 
+print('----- in 연산자 -----')
+txt = "김밥, 라면, 떡볶이, 어묵"
+
+print("라면" in txt)
+print("돈가스" in txt)
 
